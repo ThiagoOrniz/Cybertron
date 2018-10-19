@@ -54,14 +54,46 @@
 		AF31BC8F217A75C6001E25EB /* Cybertron */ = {
 			isa = PBXGroup;
 			children = (
-				AF31BC90217A75C6001E25EB /* AppDelegate.swift */,
+				AF31BCA9217A7BA8001E25EB /* Managers */,
+				AF31BCA8217A7B7B001E25EB /* Scenes */,
+				AF31BCA6217A7A1C001E25EB /* Supporting Files */,
+				AF31BCA7217A7A29001E25EB /* Resources */,
 				AF31BC92217A75C6001E25EB /* ViewController.swift */,
-				AF31BC94217A75C6001E25EB /* Main.storyboard */,
-				AF31BC97217A75C8001E25EB /* Assets.xcassets */,
-				AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */,
 				AF31BC9C217A75C8001E25EB /* Info.plist */,
 			);
 			path = Cybertron;
+			sourceTree = "<group>";
+		};
+		AF31BCA6217A7A1C001E25EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF31BC90217A75C6001E25EB /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF31BCA7217A7A29001E25EB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF31BC94217A75C6001E25EB /* Main.storyboard */,
+				AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */,
+				AF31BC97217A75C8001E25EB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF31BCA8217A7B7B001E25EB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AF31BCA9217A7BA8001E25EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
