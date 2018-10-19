@@ -13,7 +13,20 @@
 		AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC94217A75C6001E25EB /* Main.storyboard */; };
 		AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC97217A75C8001E25EB /* Assets.xcassets */; };
 		AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */; };
+		AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCAB217A7E52001E25EB /* Transformer.swift */; };
+		AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCAD217A7FC1001E25EB /* Team.swift */; };
+		AF31BCB6217A80C4001E25EB /* CybertronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCB5217A80C4001E25EB /* CybertronTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF31BCB8217A80C4001E25EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF31BC85217A75C6001E25EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF31BC8C217A75C6001E25EB;
+			remoteInfo = Cybertron;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cybertron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +39,11 @@
 		AF31BC97217A75C8001E25EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF31BC9A217A75C8001E25EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF31BC9C217A75C8001E25EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF31BCAB217A7E52001E25EB /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		AF31BCAD217A7FC1001E25EB /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		AF31BCB3217A80C4001E25EB /* CybertronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CybertronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF31BCB5217A80C4001E25EB /* CybertronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CybertronTests.swift; sourceTree = "<group>"; };
+		AF31BCB7217A80C4001E25EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +52,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7494ED6337EE9CA3BBC24685 /* Pods_Cybertron.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF31BCB0217A80C4001E25EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AF31BC8F217A75C6001E25EB /* Cybertron */,
+				AF31BCB4217A80C4001E25EB /* CybertronTests */,
 				AF31BC8E217A75C6001E25EB /* Products */,
 				52A9FEAA06B20E27A7F91F4F /* Pods */,
 				C8AA64A42400363D29116507 /* Frameworks */,
@@ -63,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				AF31BC8D217A75C6001E25EB /* Cybertron.app */,
+				AF31BCB3217A80C4001E25EB /* CybertronTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +97,7 @@
 		AF31BC8F217A75C6001E25EB /* Cybertron */ = {
 			isa = PBXGroup;
 			children = (
+				AF31BCAA217A7E20001E25EB /* Model */,
 				AF31BCA9217A7BA8001E25EB /* Managers */,
 				AF31BCA8217A7B7B001E25EB /* Scenes */,
 				AF31BCA6217A7A1C001E25EB /* Supporting Files */,
@@ -112,6 +140,24 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		AF31BCAA217A7E20001E25EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF31BCAB217A7E52001E25EB /* Transformer.swift */,
+				AF31BCAD217A7FC1001E25EB /* Team.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF31BCB4217A80C4001E25EB /* CybertronTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF31BCB5217A80C4001E25EB /* CybertronTests.swift */,
+				AF31BCB7217A80C4001E25EB /* Info.plist */,
+			);
+			path = CybertronTests;
+			sourceTree = "<group>";
+		};
 		C8AA64A42400363D29116507 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +188,24 @@
 			productReference = AF31BC8D217A75C6001E25EB /* Cybertron.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AF31BCB2217A80C4001E25EB /* CybertronTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF31BCBA217A80C4001E25EB /* Build configuration list for PBXNativeTarget "CybertronTests" */;
+			buildPhases = (
+				AF31BCAF217A80C4001E25EB /* Sources */,
+				AF31BCB0217A80C4001E25EB /* Frameworks */,
+				AF31BCB1217A80C4001E25EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF31BCB9217A80C4001E25EB /* PBXTargetDependency */,
+			);
+			name = CybertronTests;
+			productName = CybertronTests;
+			productReference = AF31BCB3217A80C4001E25EB /* CybertronTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -154,6 +218,10 @@
 				TargetAttributes = {
 					AF31BC8C217A75C6001E25EB = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					AF31BCB2217A80C4001E25EB = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = AF31BC8C217A75C6001E25EB;
 					};
 				};
 			};
@@ -171,6 +239,7 @@
 			projectRoot = "";
 			targets = (
 				AF31BC8C217A75C6001E25EB /* Cybertron */,
+				AF31BCB2217A80C4001E25EB /* CybertronTests */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +252,13 @@
 				AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */,
 				AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */,
 				AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF31BCB1217A80C4001E25EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +312,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */,
 				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
+				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
 				AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF31BCAF217A80C4001E25EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF31BCB6217A80C4001E25EB /* CybertronTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF31BCB9217A80C4001E25EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF31BC8C217A75C6001E25EB /* Cybertron */;
+			targetProxy = AF31BCB8217A80C4001E25EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AF31BC94217A75C6001E25EB /* Main.storyboard */ = {
@@ -389,7 +483,10 @@
 				DEVELOPMENT_TEAM = K3URAB63J2;
 				INFOPLIST_FILE = Cybertron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.cybertron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -408,12 +505,55 @@
 				DEVELOPMENT_TEAM = K3URAB63J2;
 				INFOPLIST_FILE = Cybertron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.cybertron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AF31BCBB217A80C4001E25EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3URAB63J2;
+				INFOPLIST_FILE = CybertronTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.CybertronTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cybertron.app/Cybertron";
+			};
+			name = Debug;
+		};
+		AF31BCBC217A80C4001E25EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3URAB63J2;
+				INFOPLIST_FILE = CybertronTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.CybertronTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cybertron.app/Cybertron";
 			};
 			name = Release;
 		};
@@ -434,6 +574,15 @@
 			buildConfigurations = (
 				AF31BCA0217A75C8001E25EB /* Debug */,
 				AF31BCA1217A75C8001E25EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF31BCBA217A80C4001E25EB /* Build configuration list for PBXNativeTarget "CybertronTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF31BCBB217A80C4001E25EB /* Debug */,
+				AF31BCBC217A80C4001E25EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
