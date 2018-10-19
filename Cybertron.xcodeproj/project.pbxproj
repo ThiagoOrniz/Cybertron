@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7494ED6337EE9CA3BBC24685 /* Pods_Cybertron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */; };
 		AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC90217A75C6001E25EB /* AppDelegate.swift */; };
 		AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC92217A75C6001E25EB /* ViewController.swift */; };
 		AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC94217A75C6001E25EB /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cybertron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4988A48CA201E30A1446AD71 /* Pods-Cybertron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.debug.xcconfig"; sourceTree = "<group>"; };
+		4C199E5A19ED8DD57B449143 /* Pods-Cybertron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.release.xcconfig"; sourceTree = "<group>"; };
 		AF31BC8D217A75C6001E25EB /* Cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF31BC90217A75C6001E25EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF31BC92217A75C6001E25EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7494ED6337EE9CA3BBC24685 /* Pods_Cybertron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52A9FEAA06B20E27A7F91F4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4988A48CA201E30A1446AD71 /* Pods-Cybertron.debug.xcconfig */,
+				4C199E5A19ED8DD57B449143 /* Pods-Cybertron.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF31BC84217A75C6001E25EB = {
 			isa = PBXGroup;
 			children = (
 				AF31BC8F217A75C6001E25EB /* Cybertron */,
 				AF31BC8E217A75C6001E25EB /* Products */,
+				52A9FEAA06B20E27A7F91F4F /* Pods */,
+				C8AA64A42400363D29116507 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +112,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		C8AA64A42400363D29116507 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF31BC9F217A75C8001E25EB /* Build configuration list for PBXNativeTarget "Cybertron" */;
 			buildPhases = (
+				5EB985BE5DC47D745615FDA1 /* [CP] Check Pods Manifest.lock */,
 				AF31BC89217A75C6001E25EB /* Sources */,
 				AF31BC8A217A75C6001E25EB /* Frameworks */,
 				AF31BC8B217A75C6001E25EB /* Resources */,
+				8EF4CC9D380BBF170FB25D0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +187,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EB985BE5DC47D745615FDA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cybertron-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EF4CC9D380BBF170FB25D0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF31BC89217A75C6001E25EB /* Sources */ = {
@@ -312,6 +381,7 @@
 		};
 		AF31BCA0217A75C8001E25EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4988A48CA201E30A1446AD71 /* Pods-Cybertron.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -319,10 +389,7 @@
 				DEVELOPMENT_TEAM = K3URAB63J2;
 				INFOPLIST_FILE = Cybertron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.cybertron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -333,6 +400,7 @@
 		};
 		AF31BCA1217A75C8001E25EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C199E5A19ED8DD57B449143 /* Pods-Cybertron.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -340,10 +408,7 @@
 				DEVELOPMENT_TEAM = K3URAB63J2;
 				INFOPLIST_FILE = Cybertron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.transformers.cybertron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
