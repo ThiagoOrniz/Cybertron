@@ -8,3 +8,6 @@ target 'Cybertron' do
   pod 'Moya', '11.0'
 
 end
+
+# ignore all warnings from all pods
+inhibit_all_warnings!

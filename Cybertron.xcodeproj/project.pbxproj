@@ -16,6 +16,10 @@
 		AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCAB217A7E52001E25EB /* Transformer.swift */; };
 		AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCAD217A7FC1001E25EB /* Team.swift */; };
 		AF31BCB6217A80C4001E25EB /* CybertronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCB5217A80C4001E25EB /* CybertronTests.swift */; };
+		AF31BCBE217A81E5001E25EB /* TransformerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCBD217A81E5001E25EB /* TransformerManager.swift */; };
+		AF31BCC1217A8316001E25EB /* TransformersListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCC0217A8316001E25EB /* TransformersListController.swift */; };
+		AF31BCC3217A8322001E25EB /* TransformersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCC2217A8322001E25EB /* TransformersListViewModel.swift */; };
+		AF31BCC5217A842D001E25EB /* TransformersListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF31BCC4217A842D001E25EB /* TransformersListController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		AF31BCB3217A80C4001E25EB /* CybertronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CybertronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF31BCB5217A80C4001E25EB /* CybertronTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CybertronTests.swift; sourceTree = "<group>"; };
 		AF31BCB7217A80C4001E25EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF31BCBD217A81E5001E25EB /* TransformerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerManager.swift; sourceTree = "<group>"; };
+		AF31BCC0217A8316001E25EB /* TransformersListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersListController.swift; sourceTree = "<group>"; };
+		AF31BCC2217A8322001E25EB /* TransformersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersListViewModel.swift; sourceTree = "<group>"; };
+		AF31BCC4217A842D001E25EB /* TransformersListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformersListController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,10 @@
 		AF31BC8F217A75C6001E25EB /* Cybertron */ = {
 			isa = PBXGroup;
 			children = (
+				AF31BCA6217A7A1C001E25EB /* Supporting Files */,
 				AF31BCAA217A7E20001E25EB /* Model */,
 				AF31BCA9217A7BA8001E25EB /* Managers */,
 				AF31BCA8217A7B7B001E25EB /* Scenes */,
-				AF31BCA6217A7A1C001E25EB /* Supporting Files */,
 				AF31BCA7217A7A29001E25EB /* Resources */,
 				AF31BC92217A75C6001E25EB /* ViewController.swift */,
 				AF31BC9C217A75C8001E25EB /* Info.plist */,
@@ -129,6 +137,7 @@
 		AF31BCA8217A7B7B001E25EB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AF31BCBF217A8302001E25EB /* Transformers List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -136,6 +145,7 @@
 		AF31BCA9217A7BA8001E25EB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AF31BCBD217A81E5001E25EB /* TransformerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -156,6 +166,16 @@
 				AF31BCB7217A80C4001E25EB /* Info.plist */,
 			);
 			path = CybertronTests;
+			sourceTree = "<group>";
+		};
+		AF31BCBF217A8302001E25EB /* Transformers List */ = {
+			isa = PBXGroup;
+			children = (
+				AF31BCC0217A8316001E25EB /* TransformersListController.swift */,
+				AF31BCC2217A8322001E25EB /* TransformersListViewModel.swift */,
+				AF31BCC4217A842D001E25EB /* TransformersListController.xib */,
+			);
+			path = "Transformers List";
 			sourceTree = "<group>";
 		};
 		C8AA64A42400363D29116507 /* Frameworks */ = {
@@ -250,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */,
+				AF31BCC5217A842D001E25EB /* TransformersListController.xib in Resources */,
 				AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */,
 				AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */,
 			);
@@ -312,9 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF31BCC3217A8322001E25EB /* TransformersListViewModel.swift in Sources */,
 				AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */,
+				AF31BCBE217A81E5001E25EB /* TransformerManager.swift in Sources */,
 				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
+				AF31BCC1217A8316001E25EB /* TransformersListController.swift in Sources */,
 				AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
