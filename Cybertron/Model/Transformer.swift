@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transformer {
+struct Transformer: Decodable {
     var id: String?
     var name: String?
     var strength: Int = 0
@@ -19,8 +19,6 @@ struct Transformer {
     var courage: Int = 0
     var firepower: Int = 0
     var skill: Int = 0
-    
-    // Each Transformer must either be an Autobot or a Decepticon.
     let team: String?
     let teamIcon: String?
 }

@@ -31,7 +31,8 @@ class TransformersListController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetchData()
+        print(#function)
+
     }
 }
 
@@ -42,6 +43,7 @@ extension TransformersListController: TransformersListDelegate {
     }
     
     func didLoadData() {
+        print(#function)
         print(viewModel.transformers)
         
     }
