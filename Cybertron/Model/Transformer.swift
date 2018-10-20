@@ -32,3 +32,29 @@ extension Transformer {
         return strength + intelligence + speed + endurance + firepower
     }
 }
+
+extension Transformer {
+    var transformerTeam: Team {
+        return Team(rawValue: team ?? "") ?? .none
+    }
+    
+    // For comparisons 
+    var nameNormalized: String {
+        return name?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    }
+    
+    var isLeader: Bool {
+        switch transformerTeam {
+        case .autobot: return nameNormalized == "optimus prime"
+        case .decepticon: return nameNormalized == "predaking"
+        case .none: return false
+        }
+    }
+}
+
+extension Transformer: Equatable {
+    static func == (lhs: Transformer, rhs: Transformer) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.nameNormalized == rhs.nameNormalized
+    }
+}

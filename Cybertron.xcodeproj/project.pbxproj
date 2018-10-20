@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7494ED6337EE9CA3BBC24685 /* Pods_Cybertron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */; };
+		AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A524217A9903005FF474 /* BattleFieldManager.swift */; };
+		AF26A527217A9D11005FF474 /* WarResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A526217A9D11005FF474 /* WarResult.swift */; };
+		AF30261B217B8936006A59EF /* WarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30261A217B8936006A59EF /* WarTests.swift */; };
+		AF30261D217BA85A006A59EF /* BattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30261C217BA85A006A59EF /* BattleTests.swift */; };
 		AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC90217A75C6001E25EB /* AppDelegate.swift */; };
 		AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC92217A75C6001E25EB /* ViewController.swift */; };
 		AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC94217A75C6001E25EB /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 		1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cybertron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4988A48CA201E30A1446AD71 /* Pods-Cybertron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.debug.xcconfig"; sourceTree = "<group>"; };
 		4C199E5A19ED8DD57B449143 /* Pods-Cybertron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.release.xcconfig"; sourceTree = "<group>"; };
+		AF26A524217A9903005FF474 /* BattleFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldManager.swift; sourceTree = "<group>"; };
+		AF26A526217A9D11005FF474 /* WarResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarResult.swift; sourceTree = "<group>"; };
+		AF30261A217B8936006A59EF /* WarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarTests.swift; sourceTree = "<group>"; };
+		AF30261C217BA85A006A59EF /* BattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTests.swift; sourceTree = "<group>"; };
 		AF31BC8D217A75C6001E25EB /* Cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF31BC90217A75C6001E25EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF31BC92217A75C6001E25EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AF26A528217AA06A005FF474 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AF31BC84217A75C6001E25EB = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +120,7 @@
 		AF31BC8F217A75C6001E25EB /* Cybertron */ = {
 			isa = PBXGroup;
 			children = (
+				AF26A528217AA06A005FF474 /* Extensions */,
 				AF31BCA6217A7A1C001E25EB /* Supporting Files */,
 				AF31BCAA217A7E20001E25EB /* Model */,
 				AF31BCA9217A7BA8001E25EB /* Managers */,
@@ -146,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				AF31BCBD217A81E5001E25EB /* TransformerManager.swift */,
+				AF26A524217A9903005FF474 /* BattleFieldManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 			children = (
 				AF31BCAB217A7E52001E25EB /* Transformer.swift */,
 				AF31BCAD217A7FC1001E25EB /* Team.swift */,
+				AF26A526217A9D11005FF474 /* WarResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				AF31BCB5217A80C4001E25EB /* CybertronTests.swift */,
+				AF30261A217B8936006A59EF /* WarTests.swift */,
+				AF30261C217BA85A006A59EF /* BattleTests.swift */,
 				AF31BCB7217A80C4001E25EB /* Info.plist */,
 			);
 			path = CybertronTests;
@@ -339,6 +359,8 @@
 				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
 				AF31BCC1217A8316001E25EB /* TransformersListController.swift in Sources */,
+				AF26A527217A9D11005FF474 /* WarResult.swift in Sources */,
+				AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */,
 				AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF30261B217B8936006A59EF /* WarTests.swift in Sources */,
 				AF31BCB6217A80C4001E25EB /* CybertronTests.swift in Sources */,
+				AF30261D217BA85A006A59EF /* BattleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
