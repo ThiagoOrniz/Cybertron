@@ -20,19 +20,29 @@ class TransformersListViewModel {
     var manager: TransformerManager
     var transformers: [Transformer] = []
     
+    var isEmpty: Bool {
+        return transformers.isEmpty
+    }
+    
     init() {
         manager = TransformerManager()
     }
     
     func fetchData() {
-        manager.fetchAll { [weak self] (transformers, error) in
-            if let err = error {
-                self?.delegate?.didFail(msg: err.localizedDescription)
-                return
-            }
-            self?.transformers = transformers
-            self?.delegate?.didLoadData()
-        }
+        
+        transformers = [Transformer(id: nil, name: "First Autobot!", strength: 4, intelligence: 4, speed: 4, endurance: 4, rank: 7, courage: 4, firepower: 4, skill: 4, team: "A", teamIcon: nil)]
+        
+        delegate?.didLoadData()
+        
+//        manager.fetchAll { [weak self] (transformers, error) in
+//            if let err = error {
+//                self?.delegate?.didFail(msg: err.localizedDescription)
+//                return
+//            }
+//            self?.transformers = [Transformer(id: nil, name: "First Autobot!", strength: 4, intelligence: 4, speed: 4, endurance: 4, rank: 7, courage: 4, firepower: 4, skill: 4, team: "A", teamIcon: nil)]
+//
+//            self?.delegate?.didLoadData()
+//        }
     }
     
     func createData() {
@@ -70,5 +80,16 @@ class TransformersListViewModel {
             }
             self?.fetchData()
         }
+    }
+}
+
+// MARK: - Table view methods related
+extension TransformersListViewModel {
+    func numberOfRows() -> Int {
+        return transformers.count
+    }
+    
+    func transformerViewModel(at indexPath: IndexPath) -> TransformerViewModel {
+        return TransformerViewModel(transformer: transformers[indexPath.row])
     }
 }

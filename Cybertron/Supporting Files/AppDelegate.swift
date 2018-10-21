@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        addAppearance()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let navigationController = UINavigationController(rootViewController: TransformersListController())
+        let navigationController = CTBNavigationController(rootViewController: TransformersListController())
         window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
@@ -26,6 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    private func addAppearance() {
+        
+        let appearanceProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [CTBNavigationController.self])
+        
+        appearanceProxy.barStyle = .default
+        
+        appearanceProxy.barTintColor = UIColor.CBTColors.navbarBackground
+        appearanceProxy.tintColor = UIColor.CBTColors.navbarText
+        
+        appearanceProxy.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+            NSAttributedString.Key.foregroundColor: UIColor.CBTColors.navbarText]
+        
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [CTBNavigationController.self])
+            .setTitleTextAttributes([
+            NSAttributedString.Key.foregroundColor: UIColor.CBTColors.navbarText],
+                                                            for: .normal )
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

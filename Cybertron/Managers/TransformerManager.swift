@@ -12,7 +12,7 @@ import Moya
 typealias TransformerListHandler = ((_ list: [Transformer], _ error: Error?) -> Void)
 typealias TransformerHandler = ((_ transformer: Transformer?, _ error: Error?) -> Void)
 typealias SuccessHandler = ((_ success: Bool, _ error: Error?) -> Void)
-
+typealias ImageHandler = ((_ image: UIImage) -> Void)
 typealias TokenHandler = ((_ token: String?, _ error: Error?) -> Void)
 
 class TransformerManager {
@@ -159,8 +159,13 @@ class TransformerManager {
                 print("Response of create")
                 
                 switch result {
-                case let .success(_):
-                    completion(true, nil)
+                case let .success(moyaResponse):
+                    
+                    if moyaResponse.statusCode > 299 {
+                        completion(false, MyError.failDeletion)
+                    } else {
+                        completion(true, nil)
+                    }
                     
                 case let .failure(error):
                     print(error.localizedDescription)

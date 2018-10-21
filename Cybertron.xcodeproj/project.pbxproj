@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7494ED6337EE9CA3BBC24685 /* Pods_Cybertron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */; };
+		AF0807F0217CCA4D0023101F /* TransformerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807EE217CCA4D0023101F /* TransformerCell.swift */; };
+		AF0807F1217CCA4D0023101F /* TransformerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0807EF217CCA4D0023101F /* TransformerCell.xib */; };
+		AF0807F3217CD2390023101F /* TransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F2217CD2390023101F /* TransformerViewModel.swift */; };
+		AF0807F5217CD5140023101F /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F4217CD5140023101F /* UIImageView.swift */; };
+		AF0807F7217CD9720023101F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F6217CD9720023101F /* UIViewController.swift */; };
+		AF0807FA217CDE920023101F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F9217CDE920023101F /* UIColor.swift */; };
+		AF0807FD217CE1C20023101F /* CTBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807FC217CE1C20023101F /* CTBNavigationController.swift */; };
 		AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A524217A9903005FF474 /* BattleFieldManager.swift */; };
 		AF26A527217A9D11005FF474 /* WarResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A526217A9D11005FF474 /* WarResult.swift */; };
 		AF30261B217B8936006A59EF /* WarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30261A217B8936006A59EF /* WarTests.swift */; };
@@ -43,6 +50,13 @@
 		1E15570E59BD39F5CF8EBAC3 /* Pods_Cybertron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cybertron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4988A48CA201E30A1446AD71 /* Pods-Cybertron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.debug.xcconfig"; sourceTree = "<group>"; };
 		4C199E5A19ED8DD57B449143 /* Pods-Cybertron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cybertron.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cybertron/Pods-Cybertron.release.xcconfig"; sourceTree = "<group>"; };
+		AF0807EE217CCA4D0023101F /* TransformerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCell.swift; sourceTree = "<group>"; };
+		AF0807EF217CCA4D0023101F /* TransformerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformerCell.xib; sourceTree = "<group>"; };
+		AF0807F2217CD2390023101F /* TransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerViewModel.swift; sourceTree = "<group>"; };
+		AF0807F4217CD5140023101F /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		AF0807F6217CD9720023101F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		AF0807F9217CDE920023101F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AF0807FC217CE1C20023101F /* CTBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTBNavigationController.swift; sourceTree = "<group>"; };
 		AF26A524217A9903005FF474 /* BattleFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldManager.swift; sourceTree = "<group>"; };
 		AF26A526217A9D11005FF474 /* WarResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarResult.swift; sourceTree = "<group>"; };
 		AF30261A217B8936006A59EF /* WarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarTests.swift; sourceTree = "<group>"; };
@@ -96,9 +110,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AF0807ED217CCA2D0023101F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AF0807EE217CCA4D0023101F /* TransformerCell.swift */,
+				AF0807EF217CCA4D0023101F /* TransformerCell.xib */,
+				AF0807F2217CD2390023101F /* TransformerViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		AF26A528217AA06A005FF474 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AF0807F4217CD5140023101F /* UIImageView.swift */,
+				AF0807F6217CD9720023101F /* UIViewController.swift */,
+				AF0807F9217CDE920023101F /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,6 +180,7 @@
 				AF31BC90217A75C6001E25EB /* AppDelegate.swift */,
 				AF302621217BADCA006A59EF /* Const.swift */,
 				AF302623217BB72A006A59EF /* MyError.swift */,
+				AF0807FC217CE1C20023101F /* CTBNavigationController.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -211,6 +239,7 @@
 				AF31BCC0217A8316001E25EB /* TransformersListController.swift */,
 				AF31BCC2217A8322001E25EB /* TransformersListViewModel.swift */,
 				AF31BCC4217A842D001E25EB /* TransformersListController.xib */,
+				AF0807ED217CCA2D0023101F /* Cells */,
 			);
 			path = "Transformers List";
 			sourceTree = "<group>";
@@ -307,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */,
+				AF0807F1217CCA4D0023101F /* TransformerCell.xib in Resources */,
 				AF31BCC5217A842D001E25EB /* TransformersListController.xib in Resources */,
 				AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */,
 				AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */,
@@ -375,12 +405,18 @@
 				AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */,
 				AF31BCBE217A81E5001E25EB /* TransformerManager.swift in Sources */,
 				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
+				AF0807FD217CE1C20023101F /* CTBNavigationController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
+				AF0807FA217CDE920023101F /* UIColor.swift in Sources */,
+				AF0807F5217CD5140023101F /* UIImageView.swift in Sources */,
+				AF0807F3217CD2390023101F /* TransformerViewModel.swift in Sources */,
 				AF302620217BAC04006A59EF /* TransformerService.swift in Sources */,
 				AF31BCC1217A8316001E25EB /* TransformersListController.swift in Sources */,
 				AF26A527217A9D11005FF474 /* WarResult.swift in Sources */,
+				AF0807F0217CCA4D0023101F /* TransformerCell.swift in Sources */,
 				AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */,
 				AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */,
+				AF0807F7217CD9720023101F /* UIViewController.swift in Sources */,
 				AF302622217BADCA006A59EF /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
