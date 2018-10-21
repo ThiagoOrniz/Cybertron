@@ -91,7 +91,8 @@ class TransformersListController: UIViewController {
     }
     
     @objc private func actionNew() {
-        print(#function)
+        let createViewController = CreateTransformerController(viewModel: viewModel.createViewModel)
+        navigationController?.pushViewController(createViewController, animated: true)
     }
 }
 

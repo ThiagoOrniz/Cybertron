@@ -15,6 +15,10 @@
 		AF0807F7217CD9720023101F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F6217CD9720023101F /* UIViewController.swift */; };
 		AF0807FA217CDE920023101F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F9217CDE920023101F /* UIColor.swift */; };
 		AF0807FD217CE1C20023101F /* CTBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807FC217CE1C20023101F /* CTBNavigationController.swift */; };
+		AF080801217CEB840023101F /* CreateTransformerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF080800217CEB840023101F /* CreateTransformerController.swift */; };
+		AF080803217CEBA40023101F /* CreateTransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF080802217CEBA40023101F /* CreateTransformerViewModel.swift */; };
+		AF080805217CEBB60023101F /* CreateTransformerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF080804217CEBB60023101F /* CreateTransformerController.xib */; };
+		AF080807217CF8120023101F /* FormWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF080806217CF8120023101F /* FormWrapView.swift */; };
 		AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A524217A9903005FF474 /* BattleFieldManager.swift */; };
 		AF26A527217A9D11005FF474 /* WarResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26A526217A9D11005FF474 /* WarResult.swift */; };
 		AF30261B217B8936006A59EF /* WarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30261A217B8936006A59EF /* WarTests.swift */; };
@@ -57,6 +61,10 @@
 		AF0807F6217CD9720023101F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		AF0807F9217CDE920023101F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF0807FC217CE1C20023101F /* CTBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTBNavigationController.swift; sourceTree = "<group>"; };
+		AF080800217CEB840023101F /* CreateTransformerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerController.swift; sourceTree = "<group>"; };
+		AF080802217CEBA40023101F /* CreateTransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransformerViewModel.swift; sourceTree = "<group>"; };
+		AF080804217CEBB60023101F /* CreateTransformerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransformerController.xib; sourceTree = "<group>"; };
+		AF080806217CF8120023101F /* FormWrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormWrapView.swift; sourceTree = "<group>"; };
 		AF26A524217A9903005FF474 /* BattleFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFieldManager.swift; sourceTree = "<group>"; };
 		AF26A526217A9D11005FF474 /* WarResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarResult.swift; sourceTree = "<group>"; };
 		AF30261A217B8936006A59EF /* WarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarTests.swift; sourceTree = "<group>"; };
@@ -120,6 +128,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		AF0807FE217CEB1F0023101F /* Create Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				AF080800217CEB840023101F /* CreateTransformerController.swift */,
+				AF080802217CEBA40023101F /* CreateTransformerViewModel.swift */,
+				AF080804217CEBB60023101F /* CreateTransformerController.xib */,
+			);
+			path = "Create Transformer";
+			sourceTree = "<group>";
+		};
+		AF0807FF217CEB500023101F /* Transformer Details  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Transformer Details ";
+			sourceTree = "<group>";
+		};
 		AF26A528217AA06A005FF474 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +206,7 @@
 				AF302621217BADCA006A59EF /* Const.swift */,
 				AF302623217BB72A006A59EF /* MyError.swift */,
 				AF0807FC217CE1C20023101F /* CTBNavigationController.swift */,
+				AF080806217CF8120023101F /* FormWrapView.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,6 +224,8 @@
 		AF31BCA8217A7B7B001E25EB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AF0807FF217CEB500023101F /* Transformer Details  */,
+				AF0807FE217CEB1F0023101F /* Create Transformer */,
 				AF31BCBF217A8302001E25EB /* Transformers List */,
 			);
 			path = Scenes;
@@ -338,6 +366,7 @@
 				AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */,
 				AF0807F1217CCA4D0023101F /* TransformerCell.xib in Resources */,
 				AF31BCC5217A842D001E25EB /* TransformersListController.xib in Resources */,
+				AF080805217CEBB60023101F /* CreateTransformerController.xib in Resources */,
 				AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */,
 				AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */,
 			);
@@ -404,6 +433,7 @@
 				AF31BCC3217A8322001E25EB /* TransformersListViewModel.swift in Sources */,
 				AF31BCAE217A7FC1001E25EB /* Team.swift in Sources */,
 				AF31BCBE217A81E5001E25EB /* TransformerManager.swift in Sources */,
+				AF080807217CF8120023101F /* FormWrapView.swift in Sources */,
 				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
 				AF0807FD217CE1C20023101F /* CTBNavigationController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
@@ -411,10 +441,12 @@
 				AF0807F5217CD5140023101F /* UIImageView.swift in Sources */,
 				AF0807F3217CD2390023101F /* TransformerViewModel.swift in Sources */,
 				AF302620217BAC04006A59EF /* TransformerService.swift in Sources */,
+				AF080801217CEB840023101F /* CreateTransformerController.swift in Sources */,
 				AF31BCC1217A8316001E25EB /* TransformersListController.swift in Sources */,
 				AF26A527217A9D11005FF474 /* WarResult.swift in Sources */,
 				AF0807F0217CCA4D0023101F /* TransformerCell.swift in Sources */,
 				AF26A525217A9903005FF474 /* BattleFieldManager.swift in Sources */,
+				AF080803217CEBA40023101F /* CreateTransformerViewModel.swift in Sources */,
 				AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */,
 				AF0807F7217CD9720023101F /* UIViewController.swift in Sources */,
 				AF302622217BADCA006A59EF /* Const.swift in Sources */,

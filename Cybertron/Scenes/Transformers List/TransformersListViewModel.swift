@@ -24,25 +24,24 @@ class TransformersListViewModel {
         return transformers.isEmpty
     }
     
+    var createViewModel: CreateTransformerViewModel {
+        return CreateTransformerViewModel(transformer: nil)
+    }
+    
     init() {
         manager = TransformerManager()
     }
     
     func fetchData() {
         
-        transformers = [Transformer(id: nil, name: "First Autobot!", strength: 4, intelligence: 4, speed: 4, endurance: 4, rank: 7, courage: 4, firepower: 4, skill: 4, team: "A", teamIcon: nil)]
-        
-        delegate?.didLoadData()
-        
-//        manager.fetchAll { [weak self] (transformers, error) in
-//            if let err = error {
-//                self?.delegate?.didFail(msg: err.localizedDescription)
-//                return
-//            }
-//            self?.transformers = [Transformer(id: nil, name: "First Autobot!", strength: 4, intelligence: 4, speed: 4, endurance: 4, rank: 7, courage: 4, firepower: 4, skill: 4, team: "A", teamIcon: nil)]
-//
-//            self?.delegate?.didLoadData()
-//        }
+        manager.fetchAll { [weak self] (transformers, error) in
+            if let err = error {
+                self?.delegate?.didFail(msg: err.localizedDescription)
+                return
+            }
+            self?.transformers = transformers
+            self?.delegate?.didLoadData()
+        }
     }
     
     func createData() {

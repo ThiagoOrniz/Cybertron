@@ -29,6 +29,10 @@ extension UIColor {
             return .black
         }
         
+        static var backgroundForm: UIColor {
+            return UIColor.white.withAlphaComponent(0.1)
+        }
+        
         static var title: UIColor {
             return .white
         }

@@ -19,5 +19,7 @@ struct Const {
         static let tableView: CGFloat = 0
         static let tableViewBottom: CGFloat = 75
         static let mainButtonCorner: CGFloat = 16
+        static let formCorner: CGFloat = 16
+
     }
 }

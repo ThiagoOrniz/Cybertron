@@ -19,8 +19,8 @@ struct Transformer: Decodable {
     var courage: Int = 0
     var firepower: Int = 0
     var skill: Int = 0
-    let team: String?
-    let teamIcon: String?
+    var team: String?
+    var teamIcon: String?
 }
 
 extension Transformer {

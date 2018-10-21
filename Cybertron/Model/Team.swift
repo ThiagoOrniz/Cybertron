@@ -21,4 +21,6 @@ enum Team: String {
         case .none: return "Neutral"
         }
     }
+    
+    static var kMaxTeam: Int = 2
 }

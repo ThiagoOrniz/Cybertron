@@ -11,6 +11,7 @@ import Foundation
 enum MyError: Error, LocalizedError {
     case failToken
     case failDeletion
+    case unknown
     
     var errorDescription: String? {
         switch self {
@@ -18,6 +19,8 @@ enum MyError: Error, LocalizedError {
             return "Couldn't authenticate"
         case .failDeletion:
             return "Couldn't delete transformer"
+        case .unknown:
+            return "Something went wrong"
         }
     }
 }
