@@ -47,9 +47,6 @@ class TransformersListController: UIViewController {
     func loadNavBar() {
         navigationItem.title = "Transformers"
         
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white]
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(actionNew))
     }
     
@@ -87,11 +84,12 @@ class TransformersListController: UIViewController {
     
     // MARK: - Actions
     @IBAction func actionWar() {
-        print(#function)
+        let warController = WarController(viewModel: viewModel.warViewModel)
+        navigationController?.pushViewController(warController, animated: true)
     }
     
     @objc private func actionNew() {
-        let createViewController = CreateTransformerController(viewModel: viewModel.createViewModel)
+        let createViewController = CreateTransformerController(viewModel: viewModel.createViewModel())
         navigationController?.pushViewController(createViewController, animated: true)
     }
 }
@@ -110,10 +108,34 @@ extension TransformersListController: UITableViewDelegate, UITableViewDataSource
         cell.configure(viewModel: viewModel.transformerViewModel(at: indexPath))
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
+            self?.viewModel.delete(at: indexPath)
+        }
+        
+        let update = UITableViewRowAction(style: .default, title: "Edit") { [weak self] (action, indexPath) in
+            guard let viewModel = self?.viewModel.createViewModel(at: indexPath) else { return }
+            let createTransformerController = CreateTransformerController(viewModel: viewModel)
+            
+            self?.navigationController?.pushViewController(createTransformerController,
+                                                     animated: true)
+        }
+        
+        update.backgroundColor = UIColor.CBTColors.backgroundForm
+        
+        return [delete, update]
+    }
+    
 }
 
 // MARK: - TransformersListDelegate
 extension TransformersListController: TransformersListDelegate {
+    func didFinishWar() {
+        
+    }
+    
     func didFail(msg: String) {
         showOKMessage(title: "Oops!", content: msg)
         showEmptyLabel(true)

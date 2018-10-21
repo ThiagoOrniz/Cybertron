@@ -12,7 +12,7 @@ struct WarResult {
     var teamWinner: Team = .none
     var numberOfBattles: Int = 0
     var winners: [Transformer] = []
-    var survivals: [Transformer] = []
+    var survivors: [Transformer] = []
     
     func description() {
         if teamWinner == .none && numberOfBattles > 0 { print("All participants were destroyed"); return }
@@ -24,6 +24,6 @@ struct WarResult {
         print(winners.reduce("") {text, name in "\(text) \(name.nameNormalized)"})
         
         print("Survivors from the losing team:")
-        print(survivals.reduce("") {text, name in "\(text) \(name.nameNormalized)"})
+        print(survivors.reduce("") {text, name in "\(text) \(name.nameNormalized)"})
     }
 }

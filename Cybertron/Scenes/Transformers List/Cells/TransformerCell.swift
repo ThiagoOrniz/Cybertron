@@ -18,7 +18,6 @@ class TransformerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        teamImageView.layer.cornerRadius = teamImageView.frame.width / 2
         transformerLabel.textColor = UIColor.CBTColors.title
         overallRatingLabel.textColor = UIColor.CBTColors.subTitle
         rankLabel.textColor = UIColor.CBTColors.title

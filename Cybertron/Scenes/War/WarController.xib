@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WarController" customModule="Cybertron" customModuleProvider="target">
+            <connections>
+                <outlet property="doneButton" destination="S9f-NF-52e" id="298-UT-scj"/>
+                <outlet property="numberBattlesLabel" destination="ANs-kZ-Dmt" id="gPM-da-jqx"/>
+                <outlet property="survivorTeamImageView" destination="638-m1-wQc" id="ZAh-M2-aUK"/>
+                <outlet property="survivorsLabel" destination="wy2-e4-rA9" id="vZj-PU-2Yf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="OQ6-0U-mRO"/>
+                <outlet property="winnerTeamImageView" destination="cMA-6T-0Ia" id="Ltt-t3-nHV"/>
+                <outlet property="winnerTeamLabel" destination="wmb-52-6Yq" id="4em-84-SAR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9f-NF-52e">
+                    <rect key="frame" x="24" y="593" width="327" height="50"/>
+                    <color key="backgroundColor" red="0.75294117650000003" green="0.22352941179999999" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Uj6-gE-KMv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                    <state key="normal" title="DONE">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="actionDone:" destination="-1" eventType="touchUpInside" id="iM0-p9-agY"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Battles:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsj-02-q2k">
+                    <rect key="frame" x="16" y="36" width="159" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 battle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANs-kZ-Dmt">
+                    <rect key="frame" x="16" y="65.5" width="53" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning team: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKE-JC-bfK">
+                    <rect key="frame" x="16" y="109" width="126" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_transformer" translatesAutoresizingMaskIntoConstraints="NO" id="cMA-6T-0Ia" customClass="CBTRoundImageView" customModule="Cybertron" customModuleProvider="target">
+                    <rect key="frame" x="16" y="135.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="EbS-OQ-RTR"/>
+                        <constraint firstAttribute="width" constant="25" id="pTw-6S-h4t"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="winning team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmb-52-6Yq">
+                    <rect key="frame" x="49" y="138.5" width="96.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Survivors from the losing team:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXg-33-qnK">
+                    <rect key="frame" x="16" y="184.5" width="263.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_transformer" translatesAutoresizingMaskIntoConstraints="NO" id="638-m1-wQc" customClass="CBTRoundImageView" customModule="Cybertron" customModuleProvider="target">
+                    <rect key="frame" x="16" y="211" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="7cS-Cy-FPU"/>
+                        <constraint firstAttribute="width" constant="25" id="Gua-XS-qle"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Survivor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy2-e4-rA9">
+                    <rect key="frame" x="49" y="214" width="60" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VKE-JC-bfK" firstAttribute="top" secondItem="ANs-kZ-Dmt" secondAttribute="bottom" constant="24" id="3qM-N0-VHG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="S9f-NF-52e" secondAttribute="trailing" constant="24" id="GgI-SL-XLl"/>
+                <constraint firstItem="wy2-e4-rA9" firstAttribute="top" secondItem="uXg-33-qnK" secondAttribute="bottom" constant="8" id="Oal-04-ask"/>
+                <constraint firstItem="wy2-e4-rA9" firstAttribute="leading" secondItem="638-m1-wQc" secondAttribute="trailing" constant="8" id="OyG-gH-R1A"/>
+                <constraint firstItem="ANs-kZ-Dmt" firstAttribute="leading" secondItem="lsj-02-q2k" secondAttribute="leading" id="PYR-ZI-3L1"/>
+                <constraint firstItem="cMA-6T-0Ia" firstAttribute="leading" secondItem="VKE-JC-bfK" secondAttribute="leading" id="TpY-Xn-it0"/>
+                <constraint firstItem="wmb-52-6Yq" firstAttribute="leading" secondItem="cMA-6T-0Ia" secondAttribute="trailing" constant="8" id="XIQ-hh-QXB"/>
+                <constraint firstItem="uXg-33-qnK" firstAttribute="top" secondItem="cMA-6T-0Ia" secondAttribute="bottom" constant="24" id="YHc-pT-dMi"/>
+                <constraint firstItem="638-m1-wQc" firstAttribute="leading" secondItem="uXg-33-qnK" secondAttribute="leading" id="aPL-9E-E7b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="S9f-NF-52e" secondAttribute="bottom" constant="24" id="aPh-lj-X3j"/>
+                <constraint firstItem="uXg-33-qnK" firstAttribute="leading" secondItem="lsj-02-q2k" secondAttribute="leading" id="e8U-I0-Kg4"/>
+                <constraint firstItem="638-m1-wQc" firstAttribute="top" secondItem="uXg-33-qnK" secondAttribute="bottom" constant="5" id="gNJ-iC-DdM"/>
+                <constraint firstItem="wmb-52-6Yq" firstAttribute="top" secondItem="VKE-JC-bfK" secondAttribute="bottom" constant="8" id="gU4-Kl-bDc"/>
+                <constraint firstItem="VKE-JC-bfK" firstAttribute="leading" secondItem="lsj-02-q2k" secondAttribute="leading" id="i3H-co-ZWc"/>
+                <constraint firstItem="lsj-02-q2k" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="lJx-ZZ-E5y"/>
+                <constraint firstItem="ANs-kZ-Dmt" firstAttribute="top" secondItem="lsj-02-q2k" secondAttribute="bottom" constant="8" id="oMa-f3-aLo"/>
+                <constraint firstItem="S9f-NF-52e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="r1c-L5-Yr5"/>
+                <constraint firstItem="cMA-6T-0Ia" firstAttribute="top" secondItem="VKE-JC-bfK" secondAttribute="bottom" constant="5" id="u3t-Md-XjX"/>
+                <constraint firstItem="lsj-02-q2k" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="yaS-be-CNb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="86.806596701649184"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder_transformer" width="878" height="940"/>
+    </resources>
+</document>

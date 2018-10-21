@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_transformer" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-Cm-NIS">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_transformer" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-Cm-NIS" customClass="CBTRoundImageView" customModule="Cybertron" customModuleProvider="target">
                         <rect key="frame" x="16" y="16" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="6bt-gt-Shq"/>

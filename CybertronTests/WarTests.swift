@@ -57,7 +57,7 @@ class WarTests: XCTestCase {
         
         XCTAssertTrue(result.teamWinner == .decepticon)
         XCTAssertTrue(result.numberOfBattles == 1)
-        XCTAssertTrue(result.survivals.count == 1)
+        XCTAssertTrue(result.survivors.count == 1)
         XCTAssertTrue(result.winners.count == 1)
     }
     
@@ -77,7 +77,7 @@ class WarTests: XCTestCase {
         
         XCTAssertTrue(result.teamWinner == .none)
         XCTAssertTrue(result.numberOfBattles == 1)
-        XCTAssertTrue(result.survivals.count == 0)
+        XCTAssertTrue(result.survivors.count == 0)
         XCTAssertTrue(result.winners.count == 0)
     }
     

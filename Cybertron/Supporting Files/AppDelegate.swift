@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let navigationController = CTBNavigationController(rootViewController: TransformersListController())
+        let navigationController = CBTNavigationController(rootViewController: TransformersListController())
         window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func addAppearance() {
         
-        let appearanceProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [CTBNavigationController.self])
+        let appearanceProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [CBTNavigationController.self])
         
         appearanceProxy.barStyle = .default
         
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
             NSAttributedString.Key.foregroundColor: UIColor.CBTColors.navbarText]
         
-        UIBarButtonItem.appearance(whenContainedInInstancesOf: [CTBNavigationController.self])
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [CBTNavigationController.self])
             .setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.CBTColors.navbarText],
                                                             for: .normal )

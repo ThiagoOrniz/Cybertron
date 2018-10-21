@@ -44,18 +44,25 @@ class TransformerManager {
             switch result {
             case let .success(moyaResponse):
                 print(moyaResponse)
-                guard let newToken = String(data: moyaResponse.data, encoding: .utf8) else {
-                    UserDefaults.standard.set(nil, forKey: Const.UserDefaultKeys.tokenKey)
-                    completion?(nil, MyError.failToken)
-                    return
+                
+                switch moyaResponse.statusCode {
+                case 200..<300:
+                    guard let newToken = String(data: moyaResponse.data, encoding: .utf8) else {
+                        UserDefaults.standard.set(nil, forKey: Const.UserDefaultKeys.tokenKey)
+                        completion?(nil, MyError.failToken)
+                        return
+                    }
+                    
+                    UserDefaults.standard.set(newToken, forKey: Const.UserDefaultKeys.tokenKey)
+                    
+                    let authPlugin = AccessTokenPlugin(tokenClosure: newToken)
+                    self?.provider = MoyaProvider<TransformerService>(plugins: [authPlugin])
+                    
+                    completion?(newToken, nil)
+                default:
+                    completion?(nil, MyError.unknown)
                 }
                 
-                UserDefaults.standard.set(newToken, forKey: Const.UserDefaultKeys.tokenKey)
-                
-                let authPlugin = AccessTokenPlugin(tokenClosure: newToken)
-                self?.provider = MoyaProvider<TransformerService>(plugins: [authPlugin])
-                
-                completion?(newToken, nil)
             case let .failure(error):
                 print(error.localizedDescription)
                 UserDefaults.standard.set(nil, forKey: Const.UserDefaultKeys.tokenKey)
@@ -75,11 +82,17 @@ class TransformerManager {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
 
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-                    let transformers = try? decoder.decode([String: [Transformer]].self, from: moyaResponse.data)
-                    completion(transformers?["transformers"] ?? [], nil)
+                    switch moyaResponse.statusCode {
+                    case 200..<300:
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        let transformers = try? decoder.decode([String: [Transformer]].self, from: moyaResponse.data)
+                        completion(transformers?["transformers"] ?? [], nil)
+                    default:
+                        completion([], MyError.unknown)
+                    }
+                    
                 case let .failure(error):
                     print(error.localizedDescription)
                     completion([], error)
@@ -101,15 +114,18 @@ class TransformerManager {
                 switch result {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
-
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     
-                    let transformer = try? decoder.decode(Transformer.self, from: moyaResponse.data)
-                    print(transformer)
-                    
-                    completion(transformer, nil)
-                    
+                    switch moyaResponse.statusCode {
+                    case 200..<300:
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        let transformer = try? decoder.decode(Transformer.self, from: moyaResponse.data)
+                        
+                        completion(transformer, nil)
+                    default:
+                        completion(nil, MyError.unknown)
+                    }
                 case let .failure(error):
                     print(error.localizedDescription)
                     completion(nil, error)
@@ -123,22 +139,22 @@ class TransformerManager {
         
         retrieveToken { [weak self] (_, _) in
             
-            print(transformer)
-            print("--------")
             self?.provider.request(.update(transformer: transformer)) { (result) in
-                print("Response of create")
                 
                 switch result {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
-                    
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    
-                    let transformer = try? decoder.decode(Transformer.self, from: moyaResponse.data)
-                    print(transformer)
-                    
-                    completion(transformer, nil)
+
+                    switch moyaResponse.statusCode {
+                    case 200..<300:
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        let transformer = try? decoder.decode(Transformer.self, from: moyaResponse.data)
+                        completion(transformer, nil)
+                    default:
+                        completion(nil, MyError.unknown)
+                    }
                     
                 case let .failure(error):
                     print(error.localizedDescription)
@@ -156,17 +172,15 @@ class TransformerManager {
             print(transformer)
             print("--------")
             self?.provider.request(.delete(transformer: transformer)) { (result) in
-                print("Response of create")
                 
                 switch result {
                 case let .success(moyaResponse):
                     
-                    if moyaResponse.statusCode > 299 {
-                        completion(false, MyError.failDeletion)
-                    } else {
-                        completion(true, nil)
+                    switch moyaResponse.statusCode {
+                    case 200..<300: completion(true, nil)
+                    default: completion(false, MyError.failDeletion)
                     }
-                    
+            
                 case let .failure(error):
                     print(error.localizedDescription)
                     completion(false, error)

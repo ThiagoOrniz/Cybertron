@@ -83,11 +83,11 @@ class BattleFieldManager {
         if autobotsWinners.count > decepticonsWinners.count {
             warResult.teamWinner = .autobot
             warResult.winners = autobotsWinners
-            warResult.survivals = decepticons
+            warResult.survivors = decepticons
         } else if decepticonsWinners.count > autobotsWinners.count {
             warResult.teamWinner = .decepticon
             warResult.winners = decepticonsWinners
-            warResult.survivals = autobots
+            warResult.survivors = autobots
         }
         return warResult
     }

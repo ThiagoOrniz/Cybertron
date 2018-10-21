@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CTBNavigationController: UINavigationController {
+class CBTNavigationController: UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

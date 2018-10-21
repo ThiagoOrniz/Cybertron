@@ -83,13 +83,9 @@ class CreateTransformerController: UIViewController {
     private func setupPickers() {
         numberPicker.delegate = self
         numberPicker.dataSource = self
-        numberPicker.backgroundColor = UIColor.CBTColors.background
-        numberPicker.tintColor = .white
-        
         teamPicker.delegate = self
         teamPicker.dataSource = self
-        teamPicker.backgroundColor = UIColor.CBTColors.background
-        
+     
         strengthTextField.inputView = numberPicker
         intelligenceTextField.inputView = numberPicker
         speedTextField.inputView = numberPicker
