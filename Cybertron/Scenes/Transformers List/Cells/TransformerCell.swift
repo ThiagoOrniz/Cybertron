@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class TransformerCell: UITableViewCell {
 
@@ -27,8 +28,12 @@ class TransformerCell: UITableViewCell {
         transformerLabel.text = viewModel.nameFormatted
         overallRatingLabel.text = viewModel.overallRatingFormatted
         rankLabel.text = viewModel.rankFormatted
-
-        // FIXME: - Add image after
+        
+        if let url = viewModel.url {
+            teamImageView.af_setImage(withURL: url)
+        } else {
+            teamImageView.image = #imageLiteral(resourceName: "placeholder_transformer")
+        }
     }
 }
 

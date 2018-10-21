@@ -24,12 +24,12 @@ class TransformerViewModel {
         return "Overall Rating: \(transformer.overallRating)"
     }
     
-    init(transformer: Transformer) {
-        self.transformer = transformer
+    var url: URL? {
+        return URL(string: transformer.teamIcon ?? "")
     }
     
-    func loadImage(_ completion: ImageHandler) {
-        
+    init(transformer: Transformer) {
+        self.transformer = transformer
     }
     
 }

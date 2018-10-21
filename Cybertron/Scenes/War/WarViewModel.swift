@@ -29,6 +29,16 @@ class WarViewModel {
         return result.winners.reduce("") { text, name in "\(text) \(name.name ?? "")" }
     }
     
+    var winnerIconUrl: URL? {
+        guard let iconUrlString = result.winners.first?.teamIcon else { return nil }
+        return URL(string: iconUrlString)
+    }
+    
+    var survivorIconUrl: URL? {
+        guard let iconUrlString = result.survivors.first?.teamIcon else { return nil }
+        return URL(string: iconUrlString)
+    }
+    
     var survivors: String {
         if result.survivors.isEmpty {
             return "No one survived"

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 class WarController: UIViewController {
     
@@ -47,6 +48,18 @@ class WarController: UIViewController {
         numberBattlesLabel.text = viewModel.numberBattles
         winnerTeamLabel.text = viewModel.winners
         survivorsLabel.text = viewModel.survivors
+        
+        if let url = viewModel.winnerIconUrl {
+            winnerTeamImageView.af_setImage(withURL: url)
+        } else {
+            winnerTeamImageView.image = #imageLiteral(resourceName: "placeholder_transformer")
+        }
+        
+        if let url = viewModel.survivorIconUrl {
+            survivorTeamImageView.af_setImage(withURL: url)
+        } else {
+            survivorTeamImageView.image = #imageLiteral(resourceName: "placeholder_transformer")
+        }
     }
     
     // MARK: - Actions

@@ -6,6 +6,7 @@ target 'Cybertron' do
 
   # Pods for Cybertron
   pod 'Moya', '11.0'
+  pod 'AlamofireImage', '3.4'
 
 end
 
