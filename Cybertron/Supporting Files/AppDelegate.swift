@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         addAppearance()
@@ -28,7 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    /**
+     Add design to navigation bar
+     ```
+     I use `whenContainedInInstanceOf` because in case the app opens a share tools or facebook auth for examploe. The navigation bar will change colors. It doens't affect all UINavigationControllers
+     
+     ```
+     - returns: void
+     */
     private func addAppearance() {
         
         let appearanceProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [CBTNavigationController.self])
@@ -39,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearanceProxy.tintColor = UIColor.CBTColors.navbarText
         
         appearanceProxy.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+            NSAttributedString.Key.font: Const.Fonts.title,
             NSAttributedString.Key.foregroundColor: UIColor.CBTColors.navbarText]
         
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [CBTNavigationController.self])

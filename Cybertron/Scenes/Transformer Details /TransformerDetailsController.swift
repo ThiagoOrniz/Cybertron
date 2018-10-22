@@ -35,7 +35,6 @@ class TransformerDetailsController: UIViewController {
         loadLayout()
     }
     
-   
     // MARK: - Layout
     private func loadNavBar() {
         navigationItem.title = "Details"

@@ -42,6 +42,9 @@ class BattleFieldManager {
      1 battle
      Winning team (Decepticons): Soundwave
      Survivors from the losing team (Autobots): Hubcap
+     
+     For each battle result we distribute transformers by an array of winners or destroyeds.
+     Removing from its original array.
      ```
      - returns: WarResult model
      */
@@ -59,6 +62,7 @@ class BattleFieldManager {
             warResult.numberOfBattles += 1
             print("Battle \(warResult.numberOfBattles)")
             
+            // It's ok to access the first by inde because we check it on the while statement
             let fightResult = battle(autobot: autobots[0], decepticon: decepticons[0])
         
             switch fightResult {
@@ -73,10 +77,12 @@ class BattleFieldManager {
                 case .none: break
                 }
             case .tie:
+                // Both destroyed
                 autobotsDestroyed.append(autobots.removeFirst())
                 decepticonsDestroyed.append(decepticons.removeFirst())
             case .destroyAll:
                 warResult.teamWinner = .none
+                // End war returning result with initial value (nothing)
                 return warResult
             }
         }
@@ -139,24 +145,24 @@ class BattleFieldManager {
         }
         
         // Check if oponent runs away
-        if autobot.courage - decepticon.courage >= 4 &&
-            autobot.strength - decepticon.strength >= 3 {
+        if autobot.courage - decepticon.courage >= Const.WarValues.kMinCourage &&
+            autobot.strength - decepticon.strength >=  Const.WarValues.kMinStrength {
             print("Decepticon ran away!")
             return .win(autobot)
         }
         
-        if decepticon.courage - autobot.courage >= 4 &&
-            decepticon.strength - autobot.strength >= 3 {
+        if decepticon.courage - autobot.courage >= Const.WarValues.kMinCourage &&
+            decepticon.strength - autobot.strength >= Const.WarValues.kMinStrength {
             print("Autobot ran away!")
             return .win(decepticon)
         }
         
         // Check skill
-        if autobot.skill - decepticon.skill >= 3 {
+        if autobot.skill - decepticon.skill >= Const.WarValues.kMinSkill {
             return .win(autobot)
         }
         
-        if decepticon.skill - autobot.skill >= 3 {
+        if decepticon.skill - autobot.skill >= Const.WarValues.kMinSkill {
             return .win(decepticon)
         }
         

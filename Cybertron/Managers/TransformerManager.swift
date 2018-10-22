@@ -12,15 +12,15 @@ import Moya
 typealias TransformerListHandler = ((_ list: [Transformer], _ error: Error?) -> Void)
 typealias TransformerHandler = ((_ transformer: Transformer?, _ error: Error?) -> Void)
 typealias SuccessHandler = ((_ success: Bool, _ error: Error?) -> Void)
-typealias ImageHandler = ((_ image: UIImage) -> Void)
 typealias TokenHandler = ((_ token: String?, _ error: Error?) -> Void)
 
+/// Deals with requests for Transformer CRUD
 class TransformerManager {
     
     /// Moya provider
     var provider = MoyaProvider<TransformerService>()
 
-    /// Token from UserDefaults. Nil if any
+    /// Token from UserDefaults. Nil if none
     var token: String? {
         return UserDefaults.standard.string(forKey: Const.UserDefaultKeys.tokenKey)
     }
@@ -39,9 +39,9 @@ class TransformerManager {
     }
     
     /**
-     Retrieves Token
+     Retrieves a Token
      ```
-     After retrieving token saves it using NSDefaults.
+     After retrieving a token, saves it using NSDefaults.
      Don't make the request if token is already saved.
      ```
      - parameter completion: TokenHandler?
@@ -61,7 +61,7 @@ class TransformerManager {
             case let .success(moyaResponse):
                 print(moyaResponse)
                 
-                switch moyaResponse.statusCode {
+                switch moyaResponse.statusCode { // Int - 200, 401, 500, etc
                 case 200..<300:
                     guard let newToken = String(data: moyaResponse.data, encoding: .utf8) else {
                         UserDefaults.standard.set(nil, forKey: Const.UserDefaultKeys.tokenKey)
@@ -105,7 +105,7 @@ class TransformerManager {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
 
-                    switch moyaResponse.statusCode {
+                    switch moyaResponse.statusCode { // Int - 200, 401, 500, etc
                     case 200..<300:
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -143,7 +143,7 @@ class TransformerManager {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
                     
-                    switch moyaResponse.statusCode {
+                    switch moyaResponse.statusCode { // Int - 200, 401, 500, etc
                     case 200..<300:
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -184,7 +184,7 @@ class TransformerManager {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
 
-                    switch moyaResponse.statusCode {
+                    switch moyaResponse.statusCode { // Int - 200, 401, 500, etc
                     case 200..<300:
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -222,7 +222,7 @@ class TransformerManager {
                 switch result {
                 case let .success(moyaResponse):
                     
-                    switch moyaResponse.statusCode {
+                    switch moyaResponse.statusCode { // Int - 200, 401, 500, etc
                     case 200..<300: completion(true, nil)
                     default: completion(false, MyError.failDeletion)
                     }

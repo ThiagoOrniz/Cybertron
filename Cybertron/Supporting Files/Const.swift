@@ -20,6 +20,15 @@ struct Const {
         static let tableViewBottom: CGFloat = 75
         static let mainButtonCorner: CGFloat = 16
         static let formCorner: CGFloat = 16
-
+    }
+    
+    struct WarValues {
+        static let kMinCourage = 4
+        static let kMinStrength = 3
+        static let kMinSkill = 3
+    }
+    
+    struct Fonts {
+        static let title = UIFont.boldSystemFont(ofSize: 16)
     }
 }
