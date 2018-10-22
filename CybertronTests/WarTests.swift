@@ -11,7 +11,6 @@ import XCTest
 
 class WarTests: XCTestCase {
     
-    
     let weakOptimusPrime = Transformer(id: "02", name: "optimus Prime", strength: 1, intelligence: 1, speed: 1, endurance: 1, rank: 1, courage: 1, firepower: 1, skill: 1, team: Team.autobot.rawValue, teamIcon: nil)
 
     let weakPredaking = Transformer(id: "predaking", name: "predaking", strength: 1, intelligence: 1, speed: 1, endurance: 1, rank: 1, courage: 1, firepower: 1, skill: 1, team: Team.decepticon.rawValue, teamIcon: nil)
@@ -108,4 +107,17 @@ class WarTests: XCTestCase {
         XCTAssertTrue(result.numberOfBattles == 0)
     }
     
+    /**
+     Test tie of winnings
+     - returns: void
+     */
+    func testTieOfWinnigs() {
+        
+        let battleFieldManager = BattleFieldManager(participants: [weakOptimusPrime, soundwave, decepticon1, hubcap])
+        let result = battleFieldManager.wageWar()
+        result.description()
+        
+        XCTAssertTrue(result.numberOfBattles == 2)
+        XCTAssertTrue(result.teamWinner == .none)
+    }
 }

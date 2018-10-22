@@ -88,6 +88,19 @@ class BattleFieldManager {
             warResult.teamWinner = .decepticon
             warResult.winners = decepticonsWinners
             warResult.survivors = autobots
+        } else {
+            print("There is a tie of winners 😯. let's consider the win team the one with more survivors: autobots: \(autobots.count) decepticons: \(decepticons.count)")
+            if autobots.count > decepticons.count {
+                warResult.teamWinner = .autobot
+                warResult.winners = autobotsWinners
+                warResult.survivors = autobots
+            } else if decepticons.count > autobots.count {
+                warResult.teamWinner = .decepticon
+                warResult.winners = decepticonsWinners
+                warResult.survivors = decepticons
+            } else {
+                print("Apparently no one wants to win 😡. Let's call it a tie and everybody looses")
+            }
         }
         return warResult
     }
@@ -109,30 +122,30 @@ class BattleFieldManager {
         
         // Exception rules
         if autobot.isLeader && decepticon.isLeader {
-            print("destroyAll")
+            print("Destroy All")
             return .destroyAll
         }
         
         if autobot.isLeader {
-            print("is optimus prime")
+            print("It's Optimus Prime")
             return .win(autobot)
         }
         
         if decepticon.isLeader {
-            print("is predaking")
+            print("It's Predaking")
             return .win(decepticon)
         }
         
         // Check if oponent runs away
         if autobot.courage - decepticon.courage >= 4 &&
             autobot.strength - decepticon.strength >= 3 {
-            print("decepticon ran away!")
+            print("Decepticon ran away!")
             return .win(autobot)
         }
         
         if decepticon.courage - autobot.courage >= 4 &&
             decepticon.strength - autobot.strength >= 3 {
-            print("autobot ran away!")
+            print("Autobot ran away!")
             return .win(decepticon)
         }
         

@@ -24,9 +24,9 @@ class WarViewModel {
     
     var winners: String {
         if result.winners.isEmpty {
-            return "No one won"
+            return "No one won 😭"
         }
-        return result.winners.reduce("") { text, name in "\(text) \(name.name ?? "")" }
+        return result.winners.reduce("") { text, name in "\(text) \(name.name?.capitalized ?? "")" }
     }
     
     var winnerIconUrl: URL? {
@@ -41,9 +41,9 @@ class WarViewModel {
     
     var survivors: String {
         if result.survivors.isEmpty {
-            return "No one survived"
+            return "No one survived 😭"
         }
         
-        return result.survivors.reduce("") { text, name in "\(text) \(name.name ?? "")" }
+        return result.survivors.reduce("") { text, name in "\(text) \(name.name?.capitalized ?? "")" }
     }
 }

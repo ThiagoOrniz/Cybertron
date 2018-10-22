@@ -125,8 +125,7 @@ class CreateTransformerViewModel {
             }
         }
     }
-    
-   
+
     private func validate() -> Bool {
         
         if name.isEmpty { delegate?.didMissToUpdate(item: .name); return false }

@@ -16,6 +16,12 @@ class TransformersListController: UIViewController {
     
     private let viewModel: TransformersListViewModel
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(actionRefresh), for: .valueChanged)
+        return refreshControl
+    }()
+    
     // MARK: - Initialization
     public init() {
         self.viewModel = TransformersListViewModel()
@@ -30,16 +36,15 @@ class TransformersListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
         
+        setupTableView()
         loadLayout()
         loadNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        refreshControl.beginRefreshing()
         viewModel.fetchData()
     }
     
@@ -52,9 +57,12 @@ class TransformersListController: UIViewController {
     
     private func loadLayout() {
         view.backgroundColor = UIColor.CBTColors.background
-        
         wageButton.layer.cornerRadius = Const.Padding.mainButtonCorner
-        
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
@@ -63,7 +71,9 @@ class TransformersListController: UIViewController {
                                               bottom: Const.Padding.tableViewBottom,
                                               right: Const.Padding.tableView)
         
-        tableView.register(UINib(nibName: "TransformerCell", bundle: nil), forCellReuseIdentifier: TransformerCell.reuseIdentifier)
+        tableView.register(UINib(nibName: TransformerCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: TransformerCell.reuseIdentifier)
+        
+        tableView.addSubview(refreshControl)
     }
     
     private func showEmptyLabel(_ show: Bool) {
@@ -92,6 +102,26 @@ class TransformersListController: UIViewController {
         let createViewController = CreateTransformerController(viewModel: viewModel.createViewModel())
         navigationController?.pushViewController(createViewController, animated: true)
     }
+    
+    @objc private func actionRefresh() {
+        viewModel.fetchData()
+    }
+    
+    private func showDeleteAction(_ indexPath: IndexPath) {
+        let controller = UIAlertController(title: "Are you sure?",
+                                           message: "You won't have this transformer anymore.",
+                                           preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Delete", style: .destructive) { [weak self] (_) in
+            self?.viewModel.delete(at: indexPath)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        controller.addAction(action)
+        controller.addAction(cancel)
+
+        present(controller, animated: true)
+    }
 }
 
 // MARK: - UITableViewDelegate UITableViewDataSource
@@ -112,7 +142,7 @@ extension TransformersListController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
-            self?.viewModel.delete(at: indexPath)
+            self?.showDeleteAction(indexPath)
         }
         
         let update = UITableViewRowAction(style: .default, title: "Edit") { [weak self] (action, indexPath) in
@@ -139,11 +169,13 @@ extension TransformersListController: UITableViewDelegate, UITableViewDataSource
 extension TransformersListController: TransformersListDelegate {
 
     func didFail(msg: String) {
+        refreshControl.endRefreshing()
         showOKMessage(title: "Oops!", content: msg)
         showEmptyLabel(true)
     }
     
     func didLoadData() {
+        refreshControl.endRefreshing()
         tableView.reloadData()
         showEmptyLabel(viewModel.isEmpty)
     }

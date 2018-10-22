@@ -11,7 +11,6 @@
 		AF0807F0217CCA4D0023101F /* TransformerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807EE217CCA4D0023101F /* TransformerCell.swift */; };
 		AF0807F1217CCA4D0023101F /* TransformerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF0807EF217CCA4D0023101F /* TransformerCell.xib */; };
 		AF0807F3217CD2390023101F /* TransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F2217CD2390023101F /* TransformerViewModel.swift */; };
-		AF0807F5217CD5140023101F /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F4217CD5140023101F /* UIImageView.swift */; };
 		AF0807F7217CD9720023101F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F6217CD9720023101F /* UIViewController.swift */; };
 		AF0807FA217CDE920023101F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807F9217CDE920023101F /* UIColor.swift */; };
 		AF0807FD217CE1C20023101F /* CBTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0807FC217CE1C20023101F /* CBTNavigationController.swift */; };
@@ -67,7 +66,6 @@
 		AF0807EE217CCA4D0023101F /* TransformerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCell.swift; sourceTree = "<group>"; };
 		AF0807EF217CCA4D0023101F /* TransformerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformerCell.xib; sourceTree = "<group>"; };
 		AF0807F2217CD2390023101F /* TransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerViewModel.swift; sourceTree = "<group>"; };
-		AF0807F4217CD5140023101F /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		AF0807F6217CD9720023101F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		AF0807F9217CDE920023101F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF0807FC217CE1C20023101F /* CBTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBTNavigationController.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		AF26A528217AA06A005FF474 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AF0807F4217CD5140023101F /* UIImageView.swift */,
 				AF0807F6217CD9720023101F /* UIViewController.swift */,
 				AF0807F9217CDE920023101F /* UIColor.swift */,
 			);
@@ -504,7 +501,6 @@
 				AF0807FD217CE1C20023101F /* CBTNavigationController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
 				AF0807FA217CDE920023101F /* UIColor.swift in Sources */,
-				AF0807F5217CD5140023101F /* UIImageView.swift in Sources */,
 				AF0807F3217CD2390023101F /* TransformerViewModel.swift in Sources */,
 				AF302620217BAC04006A59EF /* TransformerService.swift in Sources */,
 				AF080801217CEB840023101F /* CreateTransformerController.swift in Sources */,
