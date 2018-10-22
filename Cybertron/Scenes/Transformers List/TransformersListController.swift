@@ -44,7 +44,10 @@ class TransformersListController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        tableView.setContentOffset(CGPoint(x: 0, y: tableView.contentOffset.y - (refreshControl.frame.size.height)), animated: true)
         refreshControl.beginRefreshing()
+
         viewModel.fetchData()
     }
     
@@ -74,7 +77,7 @@ class TransformersListController: UIViewController {
         
         tableView.register(UINib(nibName: TransformerCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: TransformerCell.reuseIdentifier)
         
-        tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl
     }
     
     /**
