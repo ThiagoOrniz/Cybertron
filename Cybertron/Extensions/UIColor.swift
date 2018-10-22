@@ -15,6 +15,8 @@ extension UIColor {
     // Normally I give a meaningful name or by its context. Sometimes I repeat the same color but with different names.
     // For example:
     // I have a label placeholder grayish color that it's the same as the navbar color. I create two vars because they have a diferent context, so in the future if the color of the navbar changes I don't need to refactor all the label placeholders.
+    
+    /// Custom colors of the App
     struct CBTColors {
         
         static var navbarBackground: UIColor {

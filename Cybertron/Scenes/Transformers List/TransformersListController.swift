@@ -49,10 +49,11 @@ class TransformersListController: UIViewController {
     }
     
     // MARK: - Layout
-    func loadNavBar() {
+    private func loadNavBar() {
         navigationItem.title = "Transformers"
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(actionNew))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(actionNew))
     }
     
     private func loadLayout() {
@@ -76,6 +77,12 @@ class TransformersListController: UIViewController {
         tableView.addSubview(refreshControl)
     }
     
+    /**
+     Adds or removes an empty view if there's any transformers
+     
+     - parameter show: Bool
+     - returns: void
+     */
     private func showEmptyLabel(_ show: Bool) {
         
         if show {
@@ -94,6 +101,11 @@ class TransformersListController: UIViewController {
     
     // MARK: - Actions
     @IBAction func actionWar() {
+        if viewModel.isEmpty {
+            showOKMessage(title: "Oops!", content: "It gets funnier when there are transformers to battle!")
+            return
+        }
+        
         let warController = WarController(viewModel: viewModel.warViewModel)
         navigationController?.pushViewController(warController, animated: true)
     }
@@ -107,6 +119,7 @@ class TransformersListController: UIViewController {
         viewModel.fetchData()
     }
     
+    /// Asks user to confirm deletion
     private func showDeleteAction(_ indexPath: IndexPath) {
         let controller = UIAlertController(title: "Are you sure?",
                                            message: "You won't have this transformer anymore.",
@@ -162,7 +175,6 @@ extension TransformersListController: UITableViewDelegate, UITableViewDataSource
         let detailViewController = TransformerDetailsController(viewModel: viewModel.transformerViewModel(at: indexPath))
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
 }
 
 // MARK: - TransformersListDelegate

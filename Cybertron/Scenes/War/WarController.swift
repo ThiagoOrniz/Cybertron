@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Class to battle and to show the results of a war
 class WarController: UIViewController {
     
     @IBOutlet weak var numberBattlesLabel: UILabel!

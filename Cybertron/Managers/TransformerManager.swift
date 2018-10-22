@@ -17,12 +17,20 @@ typealias TokenHandler = ((_ token: String?, _ error: Error?) -> Void)
 
 class TransformerManager {
     
+    /// Moya provider
     var provider = MoyaProvider<TransformerService>()
 
+    /// Token from UserDefaults. Nil if any
     var token: String? {
         return UserDefaults.standard.string(forKey: Const.UserDefaultKeys.tokenKey)
     }
     
+    /**
+     Initializes a TransformerManager with deals with requests
+     ```
+     Checks if token is accessible and creates a new Moya Provider passing the token.
+     ```
+     */
     init() {
         if let token = token {
             let authPlugin = AccessTokenPlugin(tokenClosure: token)
@@ -30,9 +38,17 @@ class TransformerManager {
         }
     }
     
+    /**
+     Retrieves Token
+     ```
+     After retrieving token saves it using NSDefaults.
+     Don't make the request if token is already saved.
+     ```
+     - parameter completion: TokenHandler?
+     - returns: void
+     */
     private func retrieveToken(_ completion: TokenHandler?) {
         print(#function)
-        
         if token != nil {
             print("yay we have the token already")
             completion?(token, nil)
@@ -71,13 +87,20 @@ class TransformerManager {
         }
     }
     
+    /**
+     Fetch all transformers from a token
+     ```
+     First check if we have the token calling retrieveToken method
+     
+     ```
+     - parameter completion: TransformerListHandler?
+     - returns: void
+     */
     func fetchAll(_ completion: @escaping TransformerListHandler) {
         print(#function)
         
         retrieveToken { [weak self] (_, _) in
             self?.provider.request(.transformers) { (result) in
-                print("Response of transformers")
-
                 switch result {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
@@ -101,16 +124,21 @@ class TransformerManager {
         }
     }
     
+    /**
+     Creates a new transformer
+     ```
+     First check if we have the token calling retrieveToken method
+     
+     ```
+     - parameter transformer: Transformer
+     - parameter completion: TransformerHandler?
+     - returns: void
+     */
     func create(transformer: Transformer, _ completion: @escaping TransformerHandler) {
         print(#function)
         
         retrieveToken { [weak self] (_, _) in
-            
-            print(transformer)
-            print("--------")
             self?.provider.request(.create(transformer: transformer)) { (result) in
-                print("Response of create")
-                
                 switch result {
                 case let .success(moyaResponse):
                     print(moyaResponse.statusCode)
@@ -134,6 +162,17 @@ class TransformerManager {
         }
     }
     
+    /**
+     Updates a transformer
+     ```
+     First check if we have the token calling retrieveToken method.
+     We need to have at least the id of the transformer
+     
+     ```
+     - parameter transformer: Transformer
+     - parameter completion: TransformerHandler?
+     - returns: void
+     */
     func update(transformer: Transformer, _ completion: @escaping TransformerHandler) {
         print(#function)
         
@@ -164,15 +203,22 @@ class TransformerManager {
         }
     }
     
+    /**
+     Deletes a transformer
+     ```
+     First check if we have the token calling retrieveToken method.
+     We need to have at least the id of the transformer
+     
+     ```
+     - parameter transformer: Transformer
+     - parameter completion: SuccessHandler?
+     - returns: void
+     */
     func delete(transformer: Transformer, _ completion: @escaping SuccessHandler) {
         print(#function)
         
         retrieveToken { [weak self] (_, _) in
-            
-            print(transformer)
-            print("--------")
             self?.provider.request(.delete(transformer: transformer)) { (result) in
-                
                 switch result {
                 case let .success(moyaResponse):
                     

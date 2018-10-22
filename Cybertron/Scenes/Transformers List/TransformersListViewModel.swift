@@ -24,10 +24,19 @@ class TransformersListViewModel {
         return transformers.isEmpty
     }
     
+    /// Creates a WarViewModel object
+    var warViewModel: WarViewModel {
+        return WarViewModel(participants: transformers)
+    }
+    
     init() {
         manager = TransformerManager()
     }
     
+    /**
+     Fetchs a list of transformers from endpoint
+     - returns: void
+     */
     func fetchData() {
         manager.fetchAll { [weak self] (transformers, error) in
             if let err = error {
@@ -39,6 +48,11 @@ class TransformersListViewModel {
         }
     }
     
+    /**
+     Deletes a transformer using the endpoint
+     - parameter indexPath: IndexPath which transformer is selected
+     - returns: void
+     */
     func delete(at indexPath: IndexPath) {
         manager.delete(transformer: transformers[indexPath.row]) { [weak self] (success, error) in
             if let err = error {
@@ -49,10 +63,6 @@ class TransformersListViewModel {
             self?.transformers.remove(at: indexPath.row)
             self?.delegate?.didLoadData()
         }
-    }
-    
-    var warViewModel: WarViewModel {
-        return WarViewModel(participants: transformers)
     }
 }
 

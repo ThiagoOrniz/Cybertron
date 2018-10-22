@@ -29,6 +29,7 @@ class TransformerCell: UITableViewCell {
         rankLabel.text = viewModel.rankFormatted
         
         if let url = viewModel.url {
+            // Af_setImage from AlamofireImage also deals with cache.
             teamImageView.af_setImage(withURL: url)
         } else {
             teamImageView.image = #imageLiteral(resourceName: "placeholder_transformer")

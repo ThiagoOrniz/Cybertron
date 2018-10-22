@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// A simple round image view
 class CBTRoundImageView: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()

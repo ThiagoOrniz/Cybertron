@@ -65,7 +65,6 @@ class CreateTransformerController: UIViewController {
     }
     
     // MARK: - Layout
-    
     private func setupTextFields() {
         nameTextField.delegate = self
         strengthTextField.delegate = self
@@ -77,7 +76,6 @@ class CreateTransformerController: UIViewController {
         firepowerTextField.delegate = self
         skillTextField.delegate = self
         teamTextField.delegate = self
-    
     }
     
     private func setupPickers() {
@@ -109,7 +107,6 @@ class CreateTransformerController: UIViewController {
     }
     
     // MARK: - Data
-    
     private func loadData() {
         nameTextField.text = String(viewModel.name)
         strengthTextField.text = String(viewModel.strength)
@@ -125,7 +122,6 @@ class CreateTransformerController: UIViewController {
     
 
     // MARK: - Actions
-   
     @objc private func actionSave() {
         view.isUserInteractionEnabled = false
         viewModel.save()
@@ -135,10 +131,12 @@ class CreateTransformerController: UIViewController {
 // MARK: - TransformersListDelegate
 extension CreateTransformerController: CreateTransformerDelegate {
     
+    /// Update outlets with the model values
     func didUpdateModel() {
         loadData()
     }
     
+    /// We check which attribute didn't udpate/add, so we set first responder to its textField
     func didMissToUpdate(item: CreateTransformerNumberItems) {
         view.isUserInteractionEnabled = true
 
@@ -243,15 +241,29 @@ extension CreateTransformerController: UIPickerViewDelegate, UIPickerViewDataSou
 // MARK: - Associated keyboard actions
 extension CreateTransformerController {
     
+    /**
+     Adds a gesture recognizer to view
+    
+     - returns: void
+     */
     private func hideKeyboardWhenTapped() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionHideKeyboard))
         self.view.addGestureRecognizer(tap)
     }
     
+    /**
+     Hides keyboard when user taps the view
+     - returns: void
+     */
     @objc private func actionHideKeyboard() {
         self.view.endEditing(true)
     }
     
+    /**
+     Create notification for KeyboardDidShow and KeyboardWillHide
+    
+     - returns: void
+     */
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardDidShow),
@@ -265,6 +277,16 @@ extension CreateTransformerController {
         
     }
    
+    /**
+     Deals with selector of keyboardDidShow
+     ```
+     We get the size of keyboard. It may vary according to the type of the keyboard.
+     Then add in the scrollView content insets
+     
+     ```
+     - parameter notification: NSNotification
+     - returns: void
+     */
     @objc private func keyboardDidShow(_ notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         
@@ -279,6 +301,15 @@ extension CreateTransformerController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
+    /**
+     Deals with selector of keyboardWillHide
+     ```
+     Add 0 back to scrollView content insets
+     
+     ```
+     - parameter notification: NSNotification
+     - returns: void
+     */
     @objc private func keyboardWillHide(_ notification: NSNotification) {
         let contentInsets = UIEdgeInsets(top: scrollView.contentInset.top,
                                          left: scrollView.contentInset.left,

@@ -8,12 +8,22 @@
 
 import Foundation
 
+/// Save data of a war
 struct WarResult {
+    
+    /// Team which won. case None if tie or both destroyed
     var teamWinner: Team = .none
+    
+    /// Number of battles
     var numberOfBattles: Int = 0
+    
+    /// Transformers from winning team
     var winners: [Transformer] = []
+    
+    /// Transformers from survivor team
     var survivors: [Transformer] = []
     
+    /// A basic function to help debugging
     func description() {
         if teamWinner == .none && numberOfBattles > 0 { print("All participants were destroyed"); return }
         

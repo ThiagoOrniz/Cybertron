@@ -20,6 +20,5 @@ class AttributeCell: UITableViewCell {
 }
 
 extension AttributeCell {
-    static let kHeight: CGFloat = 60
     static let reuseIdentifier: String = "AttributeCell"
 }

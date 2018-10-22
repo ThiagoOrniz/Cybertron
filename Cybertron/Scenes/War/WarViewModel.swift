@@ -29,11 +29,13 @@ class WarViewModel {
         return result.winners.reduce("") { text, name in "\(text) \(name.name?.capitalized ?? "")" }
     }
     
+    /// If there's any URL we return nil and add a place holder image
     var winnerIconUrl: URL? {
         guard let iconUrlString = result.winners.first?.teamIcon else { return nil }
         return URL(string: iconUrlString)
     }
     
+    // If there's any URL we return nil and add a place holder image
     var survivorIconUrl: URL? {
         guard let iconUrlString = result.survivors.first?.teamIcon else { return nil }
         return URL(string: iconUrlString)

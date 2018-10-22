@@ -15,10 +15,12 @@ protocol CreateTransformerDelegate: class {
     func didSuccess(msg: String)
 }
 
+/// Enum indicating if item is new or updated
 enum CreateTransformerViewModelType {
     case new, edit
 }
 
+/// List of attributes to update
 enum CreateTransformerNumberItems {
     case none, name, team, strength, intelligence, speed, endurance, rank, courage, firepower, skill
 }
@@ -47,6 +49,7 @@ class CreateTransformerViewModel {
     var skill: Int = 0
     var team: Team = .none
 
+    /// Item currently being hightlighted from user. We kept this reference to update from pickerview
     var itemBeingUpdated: CreateTransformerNumberItems = .none
 
     init(transformer: Transformer? = nil) {
@@ -69,6 +72,15 @@ class CreateTransformerViewModel {
         }
     }
     
+    /**
+     Select team from picker view
+     ```
+     It only has Team.kMaxTeam numbers
+     
+     ```
+     - parameter row: Int. Row selected
+     - returns: void
+     */
     func selectedTeam(at row: Int) {
         if row == 0 {
             team = .autobot
@@ -78,6 +90,15 @@ class CreateTransformerViewModel {
         delegate?.didUpdateModel()
     }
     
+    /**
+     Add the value from picker view to the attributes
+     ```
+     We use the switch case with itemBeingUpdated to add to its attribute
+     
+     ```
+     - parameter newValue: Int. Row selected plus 1 (1 to 10) starting with 0
+     - returns: void
+     */
     func selected(newValue: Int) {
 
         switch itemBeingUpdated {
@@ -97,6 +118,14 @@ class CreateTransformerViewModel {
         delegate?.didUpdateModel()
     }
     
+    /**
+     Saves to end point
+     ```
+     First validate attributes and call corresponding end point from TransformerManager.
+     We don't need to keep reference
+     ```
+     - returns: void
+     */
     func save() {
         if !validate() { return }
         prepareSave()
@@ -126,6 +155,15 @@ class CreateTransformerViewModel {
         }
     }
 
+    /**
+     Validates a transformer object
+     ```
+     We started the model with values of 0. If any of the attributes is still 0 so user hadn't updated it.
+     Attributes started with 1.
+     We call delegate passing which attribute to call its first responder.
+    ```
+     - returns: Bool. False if something is incorrect
+     */
     private func validate() -> Bool {
         
         if name.isEmpty { delegate?.didMissToUpdate(item: .name); return false }
@@ -142,6 +180,14 @@ class CreateTransformerViewModel {
         return true // yay
     }
     
+    /**
+     Adds value to transformer model
+     ```
+     if NEW, we create a new object Transformer. Else, we just add the attributes
+     
+     ```
+     - returns: void
+     */
     private func prepareSave() {
         switch type {
         case .edit:
@@ -162,5 +208,6 @@ class CreateTransformerViewModel {
 }
 
 extension CreateTransformerViewModel {
+    /// Number max of specs 1 - 10
     static let kMaxSpec: Int = 10
 }

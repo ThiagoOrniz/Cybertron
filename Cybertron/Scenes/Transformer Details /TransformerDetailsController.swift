@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
+/// Shows details of a transformer
 class TransformerDetailsController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     private let viewModel: TransformerViewModel
-    
     
     // MARK: - Initialization
     public init(viewModel: TransformerViewModel) {
@@ -73,6 +73,7 @@ extension TransformerDetailsController: UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TransformerCoverCell.reuseIdentifier, for: indexPath) as? TransformerCoverCell else {
                 fatalError(#function)
             }
+            
             let item = viewModel.coverCellValues()
             cell.configure(with: item.url, name: item.name)
             return cell
@@ -81,6 +82,7 @@ extension TransformerDetailsController: UITableViewDelegate, UITableViewDataSour
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.reuseIdentifier, for: indexPath) as? AttributeCell else {
                 fatalError(#function)
             }
+            
             let item = viewModel.attributeCellValues(for: indexPath)
             cell.configure(with: item.attribute, value: item.value)
             return cell

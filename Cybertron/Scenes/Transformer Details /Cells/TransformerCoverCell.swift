@@ -25,6 +25,5 @@ class TransformerCoverCell: UITableViewCell {
 }
 
 extension TransformerCoverCell {
-    static let kHeight: CGFloat = 140
     static let reuseIdentifier: String = "TransformerCoverCell"
 }

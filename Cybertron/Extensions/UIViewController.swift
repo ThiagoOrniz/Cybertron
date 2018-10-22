@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
+    /// A simple Ok message to show errors to users
     public func showOKMessage(title: String, content: String) {
         let controller = UIAlertController(title: title,
                                            message: content,

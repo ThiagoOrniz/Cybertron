@@ -8,11 +8,13 @@
 
 import Foundation
 
+/// Custom errors of the app
 enum MyError: Error, LocalizedError {
     case failToken
     case failDeletion
     case unknown
     
+    /// We can add localized strings here
     var errorDescription: String? {
         switch self {
         case .failToken:

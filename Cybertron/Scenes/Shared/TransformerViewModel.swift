@@ -8,14 +8,18 @@
 
 import Foundation
 
+/// Attributes used to help the tableview
 enum TransformerAttributes {
     case cover, rank, overall, strength, intelligence, speed, endurance, courage, firepower, skill
 }
 
+/// TransformerViewModel
 class TransformerViewModel {
     
+    /// Transformer model
     var transformer: Transformer
     
+    /// We use this to avoid repetiting when creating Attribute cells
     var attributesEnumList: [TransformerAttributes]  = [.rank, .overall, .strength, .intelligence, .speed, .endurance, .courage, .firepower, .skill]
     
     var nameFormatted: String {
@@ -34,6 +38,7 @@ class TransformerViewModel {
         return URL(string: transformer.teamIcon ?? "")
     }
     
+    /// Init method
     init(transformer: Transformer) {
         self.transformer = transformer
     }

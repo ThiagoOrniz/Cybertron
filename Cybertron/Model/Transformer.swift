@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Transformer Model
 struct Transformer: Decodable {
     var id: String?
     var name: String?
@@ -24,23 +25,24 @@ struct Transformer: Decodable {
 }
 
 extension Transformer {
-    // The “overall rating” of a Transformer is the following formula:
-    // (Strength + Intelligence + Speed + Endurance + Firepower).
+    /// The “overall rating” of a Transformer is the following formula: (Strength + Intelligence + Speed + Endurance + Firepower).
     var overallRating: Int {
         return strength + intelligence + speed + endurance + firepower
     }
 }
 
 extension Transformer {
+    /// Enum of Team given "A" or "D"
     var transformerTeam: Team {
         return Team(rawValue: team ?? "") ?? .none
     }
     
-    // For comparisons 
+    /// For comparison
     var nameNormalized: String {
         return name?.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
     }
     
+    /// For the special rule when in war
     var isLeader: Bool {
         switch transformerTeam {
         case .autobot: return nameNormalized == "optimus prime"
@@ -50,6 +52,7 @@ extension Transformer {
     }
 }
 
+// MARK: - Equatable protocol
 extension Transformer: Equatable {
     static func == (lhs: Transformer, rhs: Transformer) -> Bool {
         return lhs.id == rhs.id &&

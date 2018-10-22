@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// A simple wrap that deals with forms. In a future app it could have the textfield associated and be an official Form.
 class CBTFormWrapView: UIView {
     
     override func awakeFromNib() {

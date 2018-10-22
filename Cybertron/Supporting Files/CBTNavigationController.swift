@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Custom Navigation class. Deals with status bar color and used for the Appearence. See AppDelegate.
 class CBTNavigationController: UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

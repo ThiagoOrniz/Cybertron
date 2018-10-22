@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Fight result of a battle
 enum Fight {
     case win(_ transformer: Transformer)
     case tie
     case destroyAll
 }
 
+/// BattleFieldManager where we battle transformers
 class BattleFieldManager {
     
     var autobots: [Transformer] = []

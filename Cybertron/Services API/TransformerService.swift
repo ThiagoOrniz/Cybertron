@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 
+/// API using Moya that deals with the end points.
 enum TransformerService {
     case allSpark
     case transformers

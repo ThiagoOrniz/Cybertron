@@ -36,8 +36,6 @@
 		AF302622217BADCA006A59EF /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302621217BADCA006A59EF /* Const.swift */; };
 		AF302624217BB72A006A59EF /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302623217BB72A006A59EF /* MyError.swift */; };
 		AF31BC91217A75C6001E25EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC90217A75C6001E25EB /* AppDelegate.swift */; };
-		AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BC92217A75C6001E25EB /* ViewController.swift */; };
-		AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC94217A75C6001E25EB /* Main.storyboard */; };
 		AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC97217A75C8001E25EB /* Assets.xcassets */; };
 		AF31BC9B217A75C8001E25EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */; };
 		AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF31BCAB217A7E52001E25EB /* Transformer.swift */; };
@@ -92,8 +90,6 @@
 		AF302623217BB72A006A59EF /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		AF31BC8D217A75C6001E25EB /* Cybertron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cybertron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF31BC90217A75C6001E25EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF31BC92217A75C6001E25EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF31BC95217A75C6001E25EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF31BC97217A75C8001E25EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF31BC9A217A75C8001E25EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF31BC9C217A75C8001E25EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,7 +237,6 @@
 				AF31BCA9217A7BA8001E25EB /* Managers */,
 				AF31BCA8217A7B7B001E25EB /* Scenes */,
 				AF31BCA7217A7A29001E25EB /* Resources */,
-				AF31BC92217A75C6001E25EB /* ViewController.swift */,
 				AF31BC9C217A75C8001E25EB /* Info.plist */,
 			);
 			path = Cybertron;
@@ -263,7 +258,6 @@
 		AF31BCA7217A7A29001E25EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF31BC94217A75C6001E25EB /* Main.storyboard */,
 				AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */,
 				AF31BC97217A75C8001E25EB /* Assets.xcassets */,
 			);
@@ -423,7 +417,6 @@
 				AF080816217D3BDA0023101F /* TransformerDetailsController.xib in Resources */,
 				AF080805217CEBB60023101F /* CreateTransformerController.xib in Resources */,
 				AF31BC98217A75C8001E25EB /* Assets.xcassets in Resources */,
-				AF31BC96217A75C6001E25EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +490,6 @@
 				AF31BCBE217A81E5001E25EB /* TransformerManager.swift in Sources */,
 				AF080807217CF8120023101F /* CBTFormWrapView.swift in Sources */,
 				AF08081A217D3EB50023101F /* TransformerCoverCell.swift in Sources */,
-				AF31BC93217A75C6001E25EB /* ViewController.swift in Sources */,
 				AF0807FD217CE1C20023101F /* CBTNavigationController.swift in Sources */,
 				AF31BCAC217A7E52001E25EB /* Transformer.swift in Sources */,
 				AF0807FA217CDE920023101F /* UIColor.swift in Sources */,
@@ -536,14 +528,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AF31BC94217A75C6001E25EB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF31BC95217A75C6001E25EB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AF31BC99217A75C8001E25EB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
