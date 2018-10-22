@@ -128,14 +128,16 @@ extension TransformersListController: UITableViewDelegate, UITableViewDataSource
         return [delete, update]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = TransformerDetailsController(viewModel: viewModel.transformerViewModel(at: indexPath))
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
 }
 
 // MARK: - TransformersListDelegate
 extension TransformersListController: TransformersListDelegate {
-    func didFinishWar() {
-        
-    }
-    
+
     func didFail(msg: String) {
         showOKMessage(title: "Oops!", content: msg)
         showEmptyLabel(true)

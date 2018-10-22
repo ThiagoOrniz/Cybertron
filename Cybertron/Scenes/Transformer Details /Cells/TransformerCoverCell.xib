@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TransformerCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="TransformerCoverCell" rowHeight="98" id="ogH-TU-1yh" customClass="TransformerCoverCell" customModule="Cybertron" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ogH-TU-1yh" id="Q2s-Hp-Q5E">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_transformer" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-51-Bgd" customClass="CBTRoundImageView" customModule="Cybertron" customModuleProvider="target">
+                        <rect key="frame" x="16" y="24" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="0Rj-Gj-GzX"/>
+                            <constraint firstAttribute="width" constant="50" id="QEZ-9B-73h"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transformer name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vvf-Ja-ghz">
+                        <rect key="frame" x="76" y="37" width="228" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vvf-Ja-ghz" secondAttribute="trailing" constant="16" id="Bq0-R2-Pbx"/>
+                    <constraint firstItem="hkN-51-Bgd" firstAttribute="top" secondItem="Q2s-Hp-Q5E" secondAttribute="top" constant="24" id="Hlh-dg-xB0"/>
+                    <constraint firstItem="vvf-Ja-ghz" firstAttribute="leading" secondItem="hkN-51-Bgd" secondAttribute="trailing" constant="10" id="dlF-w2-5Wn"/>
+                    <constraint firstItem="vvf-Ja-ghz" firstAttribute="centerY" secondItem="Q2s-Hp-Q5E" secondAttribute="centerY" id="lrN-CK-pba"/>
+                    <constraint firstItem="hkN-51-Bgd" firstAttribute="leading" secondItem="Q2s-Hp-Q5E" secondAttribute="leading" constant="16" id="o32-Kd-E79"/>
+                    <constraint firstAttribute="bottom" secondItem="hkN-51-Bgd" secondAttribute="bottom" constant="24" id="uo1-g8-mTN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Dfj-Hr-9Ip"/>
+            <connections>
+                <outlet property="teamIconImageView" destination="hkN-51-Bgd" id="Dz7-Ta-eNU"/>
+                <outlet property="transformerNameLabel" destination="vvf-Ja-ghz" id="Azn-BJ-ux0"/>
+            </connections>
+            <point key="canvasLocation" x="100.8" y="83.658170914542737"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder_transformer" width="878" height="940"/>
+    </resources>
+</document>

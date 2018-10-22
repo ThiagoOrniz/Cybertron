@@ -11,7 +11,6 @@ import Foundation
 protocol TransformersListDelegate: class {
     func didFail(msg: String)
     func didLoadData()
-    func didFinishWar()
 }
 
 class TransformersListViewModel {

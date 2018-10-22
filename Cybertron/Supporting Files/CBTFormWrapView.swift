@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FormWrapView: UIView {
+class CBTFormWrapView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
